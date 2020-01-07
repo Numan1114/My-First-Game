@@ -1,12 +1,20 @@
 ﻿
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelCompleate : MonoBehaviour
 {
+    public List<string> levelnames;
+    public int currentLevel = 0;
+    public void Awake()
+    {
+        levelnames = GameManager.INSTANCE.levelnames;
+    }
 
     public void LoadNextLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        currentLevel = (currentLevel + 1) % levelnames.Count;
+        SceneManager.LoadScene(levelnames[currentLevel]);
     }
 }
