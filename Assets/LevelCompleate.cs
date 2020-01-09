@@ -7,7 +7,7 @@ public class LevelCompleate : MonoBehaviour
 {
     public List<string> levelnames;
     public int currentLevel = 0;
-    public void Awake()
+    public void Start()
     {
         levelnames = GameManager.INSTANCE.levelnames;
     }

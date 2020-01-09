@@ -4,12 +4,15 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
-
+    public static int score;
     public Transform player;
     public Text scoreText;
 
+
+
     void Update()
     {
-        scoreText.text = player.position.z.ToString("0");
+        score = (int)player.position.z;
+        scoreText.text = score + "";
     }
 }

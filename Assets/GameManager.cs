@@ -24,11 +24,17 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        Debug.Log("Hey!");
+        completeLevelUI = GameObject.Find("Level Complete");
+        Debug.Log(completeLevelUI.name);
     }
 
     public void  CompleteLevel ()
     {
         completeLevelUI.SetActive(true);
+        completeLevelUI.GetComponent<Animator>().SetBool("LevelComplete", true);
+
     }
 
 
@@ -45,6 +51,7 @@ public class GameManager : MonoBehaviour
 
     void Restart()
     {
+        gameHasEnded = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
