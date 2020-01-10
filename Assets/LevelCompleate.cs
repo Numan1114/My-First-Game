@@ -16,5 +16,7 @@ public class LevelCompleate : MonoBehaviour
     {
         currentLevel = (currentLevel + 1) % levelnames.Count;
         SceneManager.LoadScene(levelnames[currentLevel]);
+        GameManager.INSTANCE.SetGameOver(false);
     }
 }
+

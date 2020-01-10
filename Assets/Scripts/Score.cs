@@ -12,7 +12,11 @@ public class Score : MonoBehaviour
 
     void Update()
     {
-        score = (int)player.position.z;
-        scoreText.text = score + "";
+        Debug.Log(!GameManager.INSTANCE.gameOver);
+        if (!GameManager.INSTANCE.gameOver)
+        {
+            score = (int)player.position.z + GameManager.INSTANCE.score;
+            scoreText.text = score + "";
+        }
     }
 }
