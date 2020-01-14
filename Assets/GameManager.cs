@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     // we need a variable for lives (in game manager)
+    public int lives = 3;
+
+    
 
     // we need to derease thatg value when we die (in game manager)
 
@@ -64,6 +67,8 @@ public class GameManager : MonoBehaviour
     {
         if (gameHasEnded == false)
         {
+            lives = lives - 1;
+
             gameHasEnded = true;
             Invoke("Restart", restartDelay);
         }
